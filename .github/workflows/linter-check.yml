@@ -1,0 +1,13 @@
+name: inner-linter-check
+
+on:
+  - push
+  - pull-request
+  
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check project code with inner linter
+        run: make lint

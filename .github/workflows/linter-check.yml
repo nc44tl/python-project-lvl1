@@ -1,4 +1,4 @@
-name: inner-linter-check
+name: WPS-linter-check
 
 on:
   - push

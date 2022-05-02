@@ -1,6 +1,10 @@
 import prompt
 
 
+def is_even(number):
+    return number % 2 == 0
+
+
 def check_answer(number, answer):
     return answer == 'no'
 

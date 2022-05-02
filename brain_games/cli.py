@@ -6,4 +6,4 @@ import prompt
 def welcome_user():
     """User acquaintance."""
     name = prompt.string('May I have your name? ')
-    print(f'Hello, {name}!')
+    print('Hello, {0}!'.format(name))

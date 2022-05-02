@@ -1,4 +1,10 @@
 import prompt
+import sys
+from random import randint
+
+
+def get_number():
+    return randint(-sys.maxsize, sys.maxsize)
 
 
 def is_even(number):
@@ -18,7 +24,7 @@ def even_numbers_game(user):
     counter = 0
 
     while counter < 3:
-        number = 25
+        number = get_number()
 
         print(f'Question: {number}')
         answer = prompt.string('Your answer: ')

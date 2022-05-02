@@ -2,7 +2,7 @@ name: inner-linter-check
 
 on:
   - push
-  - pull-request
+  - pull_request
   
 
 jobs:

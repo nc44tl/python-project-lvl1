@@ -4,7 +4,7 @@
 
 
 from brain_games.cli import welcome_user
-from brain_games.even_numbers_game import even_numbers_game
+from brain_games.games.even_numbers import even_numbers_game
 from brain_games.scripts.brain_games import greet
 
 

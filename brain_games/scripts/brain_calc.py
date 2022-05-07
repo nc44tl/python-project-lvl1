@@ -1,11 +1,11 @@
 #!/usr/bin/env python
 
-"""The entry point for brain-even game (is random number even)."""
+"""The entry point for brain-calc game (solve random cases)."""
 
 
+from brain_games.cli import greet
 from brain_games.cli import welcome_user
 from brain_games.games.calc import calc_game
-from brain_games.scripts.brain_games import greet
 
 
 def main():

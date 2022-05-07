@@ -3,6 +3,11 @@
 import prompt
 
 
+def greet():
+    """Greeting on startup event."""
+    print('Welcome to the Brain Games!')
+
+
 def welcome_user():
     """User acquaintance.
 

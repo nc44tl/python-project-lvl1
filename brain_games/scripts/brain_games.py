@@ -4,11 +4,7 @@
 
 
 from brain_games.cli import welcome_user
-
-
-def greet():
-    """Greeting on startup event."""
-    print('Welcome to the Brain Games!')
+from brain_games.cli import greet
 
 
 def main():

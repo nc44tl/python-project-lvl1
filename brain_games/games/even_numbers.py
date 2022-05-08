@@ -1,37 +1,41 @@
 """The even_numbers_game. User answers, if generated number is even or not."""
 
-from brain_games.game import get_number
+from brain_games.game import (
+    get_number,
+    check_user_answer,
+)
 from brain_games.cli import (
     question_string,
     answer_prompt,
 )
 
 import prompt
-import sys
 
 
 def _is_even(number):
     return number % 2 == 0
 
 
-def _check_answer(number, answer):
+def _get_correct_answer(number):
     if _is_even(number):
         correct_answer = 'yes'
     else:
         correct_answer = 'no'
 
-    return (answer == correct_answer, correct_answer)
+    return (correct_answer)
 
 
-min_number = -sys.maxsize
-max_number = sys.maxsize
+min_number = -1000000000
+max_number = 1000000000
 
 
 def even_numbers_game():
-    number = get_number(min_number, max_number)
+    case = get_number(min_number, max_number)
 
-    print(question_string + str(number))
-    answer = prompt.string(answer_prompt)
-    (res, correct_answer) = _check_answer(number, answer)
+    print(question_string + str(case))
+    user_answer = prompt.string(answer_prompt)
+    
+    correct_answer = _get_correct_answer(case)
+    res = check_user_answer(user_answer, correct_answer)
 
-    return (res, answer, correct_answer)
+    return (res, user_answer, correct_answer)

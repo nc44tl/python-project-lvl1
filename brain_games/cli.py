@@ -42,6 +42,7 @@ answer_prompt = 'Your answer: '
 def get_win_phrase(username):
     print('Congratulations, {0}!'.format(username))
 
+
 def get_loose_phrase(user_answer, correct_answer, username):
     print("'{user_answer}' is wrong answer ;(. \
 Correct answer was '{correct_answer}'.\n\

@@ -13,6 +13,10 @@ def get_number(min, max):
     return randint(min, max)
 
 
+def check_user_answer(user_answer, correct_answer):
+    return user_answer == correct_answer
+
+
 from brain_games.games.even_numbers import even_numbers_game
 from brain_games.games.calc import calc_game
 

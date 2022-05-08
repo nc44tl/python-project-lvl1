@@ -4,6 +4,7 @@ from random import randint
 
 from brain_games.game import (
     get_number,
+    check_user_answer,
 )
 from brain_games.cli import (
     question_string,
@@ -19,33 +20,30 @@ def _get_operator():
     return operators[ind]
 
 
-min = -10
-max = 10
+"""Difficulty adjustment."""
+min_number = -10
+max_number = 10
 
 
-def get_case():
-    a = get_number(min, max)
-    b = get_number(min, max)
+def _get_case():
+    a = get_number(min_number, max_number)
+    b = get_number(min_number, max_number)
     op = _get_operator()
 
-    return f'{a} {op} {b}'
+    return '{a} {op} {b}'.format(a=a, op=op, b=b)
 
 
-def get_correct_answer(case):
+def _get_correct_answer(case):
     return str(eval(case))
 
 
-def check_user_answer(user_answer, correct_answer):
-    return user_answer == correct_answer
-
-
 def calc_game():
-    case = get_case()
+    case = _get_case()
 
     print(question_string + case)
     user_answer = prompt.string(answer_prompt)
 
-    correct_answer = get_correct_answer(case)
+    correct_answer = _get_correct_answer(case)
     res = check_user_answer(user_answer, correct_answer)
 
     return (res, user_answer, correct_answer)

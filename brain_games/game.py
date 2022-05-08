@@ -1,4 +1,3 @@
-import sys
 from random import randint
 
 from brain_games.cli import (
@@ -10,16 +9,19 @@ from brain_games.cli import (
 )
 
 
-def get_number():
-    return randint(-sys.maxsize, sys.maxsize)
+def get_number(min, max):
+    return randint(min, max)
 
 
 from brain_games.games.even_numbers import even_numbers_game
+from brain_games.games.calc import calc_game
 
 
 def _run_round(game):
     if game == 'brain-even':
         ( res, user_answer, correct_answer ) = even_numbers_game()
+    if game == 'brain-calc':
+        ( res, user_answer, correct_answer ) = calc_game()
     return ( res, user_answer, correct_answer )
 
 

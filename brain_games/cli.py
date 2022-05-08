@@ -36,7 +36,7 @@ def get_game_description(game):
 
 
 question_string = 'Question: '
-answer_prompt_string = 'Your answer: '
+answer_prompt = 'Your answer: '
 
 
 def get_win_phrase(username):

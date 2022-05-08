@@ -5,14 +5,14 @@
 
 from brain_games.cli import greet
 from brain_games.cli import welcome_user
-from brain_games.games.calc import calc_game
+from brain_games.game import game
 
 
 def main():
     """Run a game."""
     greet()
-    name = welcome_user()
-    calc_game(name)
+    username = welcome_user()
+    game(username, 'brain-calc')
 
 
 if __name__ == '__main__':

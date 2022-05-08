@@ -3,8 +3,7 @@
 """The entry point for brain-even game (is random number even)."""
 
 
-from brain_games.cli import greet
-from brain_games.cli import welcome_user
+from brain_games.cli import greet, welcome_user
 from brain_games.game import game
 
 

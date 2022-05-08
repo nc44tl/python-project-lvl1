@@ -1,6 +1,10 @@
 #!/usr/bin/env python
 
-"""The entry point for brain-gcd game (find the greatest common divisor of given numbers)."""
+"""
+The entry point for brain-gcd game.
+
+Find the greatest common divisor of given numbers.
+"""
 
 
 from brain_games.cli import greet, welcome_user

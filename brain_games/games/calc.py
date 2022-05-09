@@ -18,11 +18,11 @@ max_number = 10
 
 
 def _get_case():
-    a = get_number(min_number, max_number)  # noqa: WPS111 too short name
-    b = get_number(min_number, max_number)  # noqa: WPS111 too short name
-    op = _get_operator()
+    a = get_number(min_number, max_number)
+    b = get_number(min_number, max_number)
+    operator = _get_operator()
 
-    return '{a} {op} {b}'.format(a=a, op=op, b=b)
+    return '{a} {operator} {b}'.format(a=a, operator=operator, b=b)
 
 
 def _get_correct_answer(case):

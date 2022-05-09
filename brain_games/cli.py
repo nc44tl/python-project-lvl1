@@ -23,6 +23,7 @@ brain_even_description = 'Answer "yes" if the number is even, \
 otherwise answer "no".'
 brain_calc_description = 'What is the result of the expression?'
 brain_gcd_description = 'Find the greatest common divisor of given numbers.'
+brain_progression_description = 'What number is missing in the progression?'
 game_select_error = "Sorry, I don't know that game yet"
 
 
@@ -40,6 +41,9 @@ def print_game_description(game):
         return
     elif game == 'brain-gcd':
         print(brain_gcd_description)
+        return
+    elif game == 'brain-progression':
+        print(brain_progression_description)
         return
     else:
         print(game_select_error)

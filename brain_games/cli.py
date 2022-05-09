@@ -24,7 +24,8 @@ otherwise answer "no".'
 brain_calc_description = 'What is the result of the expression?'
 brain_gcd_description = 'Find the greatest common divisor of given numbers.'
 brain_progression_description = 'What number is missing in the progression?'
-game_select_error = "Sorry, I don't know that game yet"
+brain_prime_description = 'Answer "yes" if given number is prime. \
+Otherwise answer "no".'
 
 
 def print_game_description(game):
@@ -36,17 +37,18 @@ def print_game_description(game):
     if game == 'brain-even':
         print(brain_even_description)
         return
-    elif game == 'brain-calc':
+    if game == 'brain-calc':
         print(brain_calc_description)
         return
-    elif game == 'brain-gcd':
+    if game == 'brain-gcd':
         print(brain_gcd_description)
         return
-    elif game == 'brain-progression':
+    if game == 'brain-progression':
         print(brain_progression_description)
         return
-    else:
-        print(game_select_error)
+    if game == 'brain-prime':
+        print(brain_prime_description)
+        return
 
 
 question_string = 'Question: '

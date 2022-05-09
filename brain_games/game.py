@@ -42,6 +42,8 @@ from brain_games.games.even_numbers import \
     even_numbers_game  # noqa: E402 – at top of file it causes error
 from brain_games.games.gcd import \
     gcd_game  # noqa: E402 – at top of file it causes error
+from brain_games.games.prime_numbers import \
+    prime_numbers_game  # noqa: E402 – at top of file it causes error
 from brain_games.games.progression import \
     progression_game  # noqa: E402 – at top of file it causes error
 
@@ -55,6 +57,8 @@ def _run_round(game):
         (res, user_answer, correct_answer) = gcd_game()
     if game == 'brain-progression':
         (res, user_answer, correct_answer) = progression_game()
+    if game == 'brain-prime':
+        (res, user_answer, correct_answer) = prime_numbers_game()
     return (res, user_answer, correct_answer)
 
 

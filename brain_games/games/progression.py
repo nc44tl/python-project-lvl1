@@ -28,7 +28,7 @@ def _get_progression():
         number += step
         i += 1
 
-    return (case, hidden_number)
+    return (case.strip(), hidden_number)
 
 
 def progression_game():

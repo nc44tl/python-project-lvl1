@@ -1,4 +1,4 @@
-"""The even_numbers_game. User answers, if generated number is even or not."""
+"""The prime_numbers_game. User answers, if generated number is prime or not."""
 
 import prompt
 from brain_games.cli import answer_prompt, question_string
@@ -28,7 +28,7 @@ max_number = 500
 
 
 def prime_numbers_game():
-    """One round of brain-even game.
+    """One round of brain-prime game.
 
     Returns:
         res: result of the round (boolean),

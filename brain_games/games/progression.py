@@ -2,7 +2,7 @@
 
 import prompt
 from brain_games.cli import ANSWER_PROMPT, QUESTION_STRING
-from brain_games.game import check_user_answer, get_number
+from brain_games.games.game import check_user_answer, get_number
 
 _PROGRESSION_LENGTH = 10
 _MIN_START = -100

@@ -1,4 +1,4 @@
-"""CLI interactions with user."""
+"""CLI interactions."""
 
 import prompt
 

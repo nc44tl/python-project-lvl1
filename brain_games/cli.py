@@ -1,4 +1,4 @@
-"""CLI interactions with user."""
+"""CLI interactions."""
 
 import prompt
 
@@ -19,12 +19,12 @@ def welcome_user():
     return name
 
 
-brain_even_description = 'Answer "yes" if the number is even, \
+BRAIN_EVEN_DESCRIPTION = 'Answer "yes" if the number is even, \
 otherwise answer "no".'
-brain_calc_description = 'What is the result of the expression?'
-brain_gcd_description = 'Find the greatest common divisor of given numbers.'
-brain_progression_description = 'What number is missing in the progression?'
-brain_prime_description = 'Answer "yes" if given number is prime. \
+BRAIN_CALC_DESCRIPTION = 'What is the result of the expression?'
+BRAIN_GCD_DESCRIPTION = 'Find the greatest common divisor of given numbers.'
+BRAIN_PROGRESSION_DESCRIPTION = 'What number is missing in the progression?'
+BRAIN_PRIME_DESCRIPTION = 'Answer "yes" if given number is prime. \
 Otherwise answer "no".'
 
 
@@ -35,24 +35,24 @@ def print_game_description(game):
         game: name of the game
     """
     if game == 'brain-even':
-        print(brain_even_description)
+        print(BRAIN_EVEN_DESCRIPTION)
         return
     if game == 'brain-calc':
-        print(brain_calc_description)
+        print(BRAIN_CALC_DESCRIPTION)
         return
     if game == 'brain-gcd':
-        print(brain_gcd_description)
+        print(BRAIN_GCD_DESCRIPTION)
         return
     if game == 'brain-progression':
-        print(brain_progression_description)
+        print(BRAIN_PROGRESSION_DESCRIPTION)
         return
     if game == 'brain-prime':
-        print(brain_prime_description)
+        print(BRAIN_PRIME_DESCRIPTION)
         return
 
 
-question_string = 'Question: '
-answer_prompt = 'Your answer: '
+QUESTION_STRING = 'Question: '
+ANSWER_PROMPT = 'Your answer: '
 
 
 def print_win_phrase(username):

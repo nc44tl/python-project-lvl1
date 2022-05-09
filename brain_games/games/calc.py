@@ -3,8 +3,8 @@
 from random import randint
 
 import prompt
-from brain_games.cli import answer_prompt, question_string
-from brain_games.game import check_user_answer, get_number
+from brain_games.cli import ANSWER_PROMPT, QUESTION_STRING
+from brain_games.games.game import check_user_answer, get_number
 
 
 def _get_operator():
@@ -13,13 +13,13 @@ def _get_operator():
     return operators[ind]
 
 
-min_number = -10
-max_number = 10
+_MIN_NUMBER = -10
+_MAX_NUMBER = 10
 
 
 def _get_case():
-    a = get_number(min_number, max_number)
-    b = get_number(min_number, max_number)
+    a = get_number(_MIN_NUMBER, _MAX_NUMBER)
+    b = get_number(_MIN_NUMBER, _MAX_NUMBER)
     operator = _get_operator()
 
     return '{a} {operator} {b}'.format(a=a, operator=operator, b=b)
@@ -39,9 +39,9 @@ def calc_game():
     """
     case = _get_case()
 
-    print(question_string + case)
+    print(QUESTION_STRING + case)
     correct_answer = _get_correct_answer(case)
-    user_answer = prompt.string(answer_prompt)
+    user_answer = prompt.string(ANSWER_PROMPT)
 
     res = check_user_answer(user_answer, correct_answer)
 

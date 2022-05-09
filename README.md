@@ -1,7 +1,29 @@
-[![Maintainability](https://api.codeclimate.com/v1/badges/a99a88d28ad37a79dbf6/maintainability)](https://codeclimate.com/github/codeclimate/codeclimate/maintainability)
+# Brain Games
 
-### Hexlet tests and linter status:
-[![Actions Status](https://github.com/ncaatl/python-project-lvl1/workflows/hexlet-check/badge.svg)](https://github.com/ncaatl/python-project-lvl1/actions)    [![WPS-linter-check](https://github.com/ncaatl/python-project-lvl1/actions/workflows/linter-check.yml/badge.svg)](https://github.com/ncaatl/python-project-lvl1/actions/workflows/linter-check.yml)
+[![Maintainability](https://api.codeclimate.com/v1/badges/a99a88d28ad37a79dbf6/maintainability)](https://codeclimate.com/github/codeclimate/codeclimate/maintainability) [![Actions Status](https://github.com/ncaatl/python-project-lvl1/workflows/hexlet-check/badge.svg)](https://github.com/ncaatl/python-project-lvl1/actions) [![WPS-linter-check](https://github.com/ncaatl/python-project-lvl1/actions/workflows/linter-check.yml/badge.svg)](https://github.com/ncaatl/python-project-lvl1/actions/workflows/linter-check.yml)
+
+
+## Description
+
+Training project from Hexlet Python Developer course.
+The package contains five math quiz games:
+
+- Is number even check: `brain-even`
+- Calculate result of expression: `brain-calc`
+- Find greatest common divider for two numbers: `brain-gcd`
+- Find missing number in the arithmetic progression: `brain-progression`
+- Is number even check: `brain-prime`
+
+___
+
+## Requirements
+
+- Interpreter Python (version 3.7 and higher)
+- The Python package manager pip
+
+___
+
+## Installation and usage
 
 ### Installation and brain-even game demonstration:
 

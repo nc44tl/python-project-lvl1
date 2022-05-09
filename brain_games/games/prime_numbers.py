@@ -1,8 +1,8 @@
 """The prime_numbers_game. User answers, if generated number is prime or not."""
 
 import prompt
-from brain_games.cli import answer_prompt, question_string
-from brain_games.game import check_user_answer, get_number
+from brain_games.cli import ANSWER_PROMPT, QUESTION_STRING
+from brain_games.games.game import check_user_answer, get_number
 
 
 def _is_prime(number):
@@ -23,8 +23,8 @@ def _get_correct_answer(number):
     return (correct_answer)
 
 
-min_number = 1
-max_number = 500
+_MIN_NUMBER = 1
+_MAX_NUMBER = 500
 
 
 def prime_numbers_game():
@@ -35,10 +35,10 @@ def prime_numbers_game():
         user_unswer,
         correct_answer
     """
-    case = get_number(min_number, max_number)
+    case = get_number(_MIN_NUMBER, _MAX_NUMBER)
 
-    print(question_string + str(case))
-    user_answer = prompt.string(answer_prompt)
+    print(QUESTION_STRING + str(case))
+    user_answer = prompt.string(ANSWER_PROMPT)
 
     correct_answer = _get_correct_answer(case)
     res = check_user_answer(user_answer, correct_answer)

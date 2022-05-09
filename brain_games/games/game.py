@@ -62,7 +62,7 @@ def _run_round(game):
     return (res, user_answer, correct_answer)
 
 
-_rounds_per_game = 3
+_ROUNDS_PER_GAME = 3
 
 
 def game(username, game_type):
@@ -76,7 +76,7 @@ def game(username, game_type):
 
     counter = 0
 
-    while counter < _rounds_per_game:
+    while counter < _ROUNDS_PER_GAME:
         (res, user_answer, correct_answer) = _run_round(game_type)
         if not res:
             print_loose_phrase(user_answer, correct_answer, username)

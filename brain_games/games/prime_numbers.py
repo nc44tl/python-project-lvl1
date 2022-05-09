@@ -22,7 +22,7 @@ min_number = -1000000000
 max_number = 1000000000
 
 
-def even_numbers_game():
+def prime_numbers_game():
     """One round of brain-even game.
 
     Returns:

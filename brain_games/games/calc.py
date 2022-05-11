@@ -1,10 +1,12 @@
-"""The calculation game. User solves generated cases."""
+"""The calculation game. Find the result of the generated expression."""
 
 from random import randint
 
 import prompt
 from brain_games.cli import ANSWER_PROMPT, QUESTION_STRING
 from brain_games.game import check_user_answer, get_number
+
+DESCRIPTION = 'What is the result of the expression?'
 
 
 def _get_operator():
@@ -29,7 +31,7 @@ def _get_correct_answer(case):
     return str(eval(case))  # noqa: S307 Use of possibly insecure function
 
 
-def calc_game():
+def game_round():
     """One round of brain-calc game.
 
     Returns:

@@ -19,38 +19,6 @@ def welcome_user():
     return name
 
 
-BRAIN_EVEN_DESCRIPTION = 'Answer "yes" if the number is even, \
-otherwise answer "no".'
-BRAIN_CALC_DESCRIPTION = 'What is the result of the expression?'
-BRAIN_GCD_DESCRIPTION = 'Find the greatest common divisor of given numbers.'
-BRAIN_PROGRESSION_DESCRIPTION = 'What number is missing in the progression?'
-BRAIN_PRIME_DESCRIPTION = 'Answer "yes" if given number is prime. \
-Otherwise answer "no".'
-
-
-def print_game_description(game):
-    """Print game explanation.
-
-    Parameters:
-        game: name of the game
-    """
-    if game == 'brain-even':
-        print(BRAIN_EVEN_DESCRIPTION)
-        return
-    if game == 'brain-calc':
-        print(BRAIN_CALC_DESCRIPTION)
-        return
-    if game == 'brain-gcd':
-        print(BRAIN_GCD_DESCRIPTION)
-        return
-    if game == 'brain-progression':
-        print(BRAIN_PROGRESSION_DESCRIPTION)
-        return
-    if game == 'brain-prime':
-        print(BRAIN_PRIME_DESCRIPTION)
-        return
-
-
 QUESTION_STRING = 'Question: '
 ANSWER_PROMPT = 'Your answer: '
 

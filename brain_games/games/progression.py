@@ -1,8 +1,10 @@
-"""The progression game. Needed to find missing number in the progression."""
+"""The progression game. Find missing number in the progression."""
 
 import prompt
 from brain_games.cli import ANSWER_PROMPT, QUESTION_STRING
 from brain_games.game import check_user_answer, get_number
+
+DESCRIPTION = 'What number is missing in the progression?'
 
 _PROGRESSION_LENGTH = 10
 _MIN_START = -100
@@ -31,8 +33,8 @@ def _get_progression():
     return (case.strip(), hidden_number)
 
 
-def progression_game():
-    """One round of brain-progression game.
+def game_round():
+    """One round of the brain-progression game.
 
     Returns:
         res: result of the round (boolean),

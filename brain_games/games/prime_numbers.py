@@ -1,8 +1,10 @@
-"""The prime_numbers_game. User answers, if generated number is prime or not."""
+"""The prime_numbers_game. Is generated number prime or not."""
 
 import prompt
 from brain_games.cli import ANSWER_PROMPT, QUESTION_STRING
 from brain_games.game import check_user_answer, get_number
+
+DESCRIPTION = 'Answer "yes" if given number is prime. Otherwise answer "no".'
 
 
 def _is_prime(number):
@@ -27,7 +29,7 @@ _MIN_NUMBER = 1
 _MAX_NUMBER = 500
 
 
-def prime_numbers_game():
+def game_round():
     """One round of brain-prime game.
 
     Returns:

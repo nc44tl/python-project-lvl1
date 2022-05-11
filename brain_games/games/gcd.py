@@ -1,10 +1,15 @@
-"""The calculation game. User solves generated cases."""
+"""The greatest common divisor game.
+
+Find the greatest common divisor of given numbers.
+"""
 
 import math
 
 import prompt
 from brain_games.cli import ANSWER_PROMPT, QUESTION_STRING
-from brain_games.games.game import check_user_answer, get_number
+from brain_games.game import check_user_answer, get_number
+
+DESCRIPTION = 'Find the greatest common divisor of given numbers.'
 
 _MIN_NUMBER = 1
 _MAX_NUMBER = 50
@@ -22,7 +27,7 @@ def _get_correct_answer(num_a, num_b):
     return str(math.gcd(num_a, num_b))
 
 
-def gcd_game():  # noqa: WPS210 too many local variables
+def game_round():
     """One round of brain-gcd game.
 
     Returns:

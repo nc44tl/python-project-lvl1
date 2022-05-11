@@ -1,10 +1,15 @@
-"""The calculation game. User solves generated cases."""
+"""The calculation game. Find the result of the generated expression."""
 
 from random import randint
 
 import prompt
 from brain_games.cli import ANSWER_PROMPT, QUESTION_STRING
-from brain_games.games.game import check_user_answer, get_number
+from brain_games.game import check_user_answer, get_number
+
+DESCRIPTION = 'What is the result of the expression?'
+
+MIN_NUMBER = -10
+MAX_NUMBER = 10
 
 
 def _get_operator():
@@ -13,13 +18,9 @@ def _get_operator():
     return operators[ind]
 
 
-_MIN_NUMBER = -10
-_MAX_NUMBER = 10
-
-
 def _get_case():
-    a = get_number(_MIN_NUMBER, _MAX_NUMBER)
-    b = get_number(_MIN_NUMBER, _MAX_NUMBER)
+    a = get_number(MIN_NUMBER, MAX_NUMBER)
+    b = get_number(MIN_NUMBER, MAX_NUMBER)
     operator = _get_operator()
 
     return '{a} {operator} {b}'.format(a=a, operator=operator, b=b)
@@ -29,7 +30,7 @@ def _get_correct_answer(case):
     return str(eval(case))  # noqa: S307 Use of possibly insecure function
 
 
-def calc_game():
+def game_round():
     """One round of brain-calc game.
 
     Returns:

@@ -2,6 +2,9 @@
 
 import prompt
 
+QUESTION_STRING = 'Question: '
+ANSWER_PROMPT = 'Your answer: '
+
 
 def greet():
     """Greeting on startup event."""
@@ -16,43 +19,13 @@ def welcome_user():
     """
     name = prompt.string('May I have your name? ')
     print('Hello, {0}!'.format(name))
-    return name
-
-
-BRAIN_EVEN_DESCRIPTION = 'Answer "yes" if the number is even, \
-otherwise answer "no".'
-BRAIN_CALC_DESCRIPTION = 'What is the result of the expression?'
-BRAIN_GCD_DESCRIPTION = 'Find the greatest common divisor of given numbers.'
-BRAIN_PROGRESSION_DESCRIPTION = 'What number is missing in the progression?'
-BRAIN_PRIME_DESCRIPTION = 'Answer "yes" if given number is prime. \
-Otherwise answer "no".'
-
-
-def print_game_description(game):
-    """Print game explanation.
-
-    Parameters:
-        game: name of the game
-    """
-    if game == 'brain-even':
-        print(BRAIN_EVEN_DESCRIPTION)
-        return
-    if game == 'brain-calc':
-        print(BRAIN_CALC_DESCRIPTION)
-        return
-    if game == 'brain-gcd':
-        print(BRAIN_GCD_DESCRIPTION)
-        return
-    if game == 'brain-progression':
-        print(BRAIN_PROGRESSION_DESCRIPTION)
-        return
-    if game == 'brain-prime':
-        print(BRAIN_PRIME_DESCRIPTION)
-        return
-
-
-QUESTION_STRING = 'Question: '
-ANSWER_PROMPT = 'Your answer: '
+    return name  # Имя пользователя получается на вход только здесь.
+    # Если я правильно понимаю, то:
+    # - если имя не возвращается здесь, то в начале игры, вместо этой функции,
+    #   придется использовать другой идентичный запрос.
+    # - Функция welcome_user тогда будет использоваться только в скрипте
+    #   brain_games.py.
+    # Точно ли нужно прописать где-то в game.py другой запрос, идентичный этому?
 
 
 def print_win_phrase(username):

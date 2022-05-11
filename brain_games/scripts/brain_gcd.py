@@ -7,15 +7,13 @@ Find the greatest common divisor of given numbers.
 """
 
 
-from brain_games.cli import greet, welcome_user
-from brain_games.games.game import game
+from brain_games.game import run_game
+from brain_games.games import gcd
 
 
 def main():
     """Run a game."""
-    greet()
-    username = welcome_user()
-    game(username, 'brain-gcd')
+    run_game(gcd)
 
 
 if __name__ == '__main__':

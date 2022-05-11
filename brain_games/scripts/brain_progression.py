@@ -1,17 +1,18 @@
 #!/usr/bin/env python
 
-"""The entry point for brain-progression game."""
+"""The entry point for brain-progression game.
+
+Find missing number in the progression.
+"""
 
 
-from brain_games.cli import greet, welcome_user
-from brain_games.games.game import game
+from brain_games.game import run_game
+from brain_games.games import progression
 
 
 def main():
     """Run a game."""
-    greet()
-    username = welcome_user()
-    game(username, 'brain-progression')
+    run_game(progression)
 
 
 if __name__ == '__main__':

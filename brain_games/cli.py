@@ -2,6 +2,9 @@
 
 import prompt
 
+QUESTION_STRING = 'Question: '
+ANSWER_PROMPT = 'Your answer: '
+
 
 def greet():
     """Greeting on startup event."""
@@ -17,10 +20,6 @@ def welcome_user():
     name = prompt.string('May I have your name? ')
     print('Hello, {0}!'.format(name))
     return name
-
-
-QUESTION_STRING = 'Question: '
-ANSWER_PROMPT = 'Your answer: '
 
 
 def print_win_phrase(username):

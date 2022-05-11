@@ -6,6 +6,9 @@ from brain_games.game import check_user_answer, get_number
 
 DESCRIPTION = 'Answer "yes" if given number is prime. Otherwise answer "no".'
 
+MIN_NUMBER = 1
+MAX_NUMBER = 500
+
 
 def _is_prime(number):
     if number % 2 == 0:
@@ -25,10 +28,6 @@ def _get_correct_answer(number):
     return (correct_answer)
 
 
-_MIN_NUMBER = 1
-_MAX_NUMBER = 500
-
-
 def game_round():
     """One round of brain-prime game.
 
@@ -37,7 +36,7 @@ def game_round():
         user_unswer,
         correct_answer
     """
-    case = get_number(_MIN_NUMBER, _MAX_NUMBER)
+    case = get_number(MIN_NUMBER, MAX_NUMBER)
 
     print(QUESTION_STRING + str(case))
     user_answer = prompt.string(ANSWER_PROMPT)

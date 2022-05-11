@@ -10,6 +10,8 @@ from brain_games.cli import (
     welcome_user,
 )
 
+ROUNDS_PER_GAME = 3
+
 
 def get_number(min_number, max_number):
     """Generate random number in range.
@@ -37,9 +39,6 @@ def check_user_answer(user_answer, correct_answer):
     return user_answer == correct_answer
 
 
-_ROUNDS_PER_GAME = 3
-
-
 def run_game(game):
     """General game temlplate.
 
@@ -53,7 +52,7 @@ def run_game(game):
 
     counter = 0
 
-    while counter < _ROUNDS_PER_GAME:
+    while counter < ROUNDS_PER_GAME:
         (res, user_answer, correct_answer) = game.game_round()
         if not res:
             print_loose_phrase(user_answer, correct_answer, username)

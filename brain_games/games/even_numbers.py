@@ -6,6 +6,9 @@ from brain_games.game import check_user_answer, get_number
 
 DESCRIPTION = 'Answer "yes" if the number is even, otherwise answer "no".'
 
+MIN_NUMBER = -1000000000
+MAX_NUMBER = 1000000000
+
 
 def _is_even(number):
     return number % 2 == 0
@@ -20,10 +23,6 @@ def _get_correct_answer(number):
     return (correct_answer)
 
 
-_MIN_NUMBER = -1000000000
-_MAX_NUMBER = 1000000000
-
-
 def game_round():
     """One round of brain-even game.
 
@@ -32,7 +31,7 @@ def game_round():
         user_unswer,
         correct_answer
     """
-    case = get_number(_MIN_NUMBER, _MAX_NUMBER)
+    case = get_number(MIN_NUMBER, MAX_NUMBER)
 
     print(QUESTION_STRING + str(case))
     user_answer = prompt.string(ANSWER_PROMPT)

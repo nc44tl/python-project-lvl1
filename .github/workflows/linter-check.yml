@@ -5,7 +5,7 @@ on:
   
 
 jobs:
-  build and run linter:
+  build_and_run_linter:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2

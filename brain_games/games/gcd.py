@@ -4,7 +4,7 @@ import math
 
 import prompt
 from brain_games.cli import ANSWER_PROMPT, QUESTION_STRING
-from brain_games.games.game import check_user_answer, get_number
+from brain_games.game import check_user_answer, get_number
 
 _MIN_NUMBER = 1
 _MAX_NUMBER = 50

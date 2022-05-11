@@ -8,7 +8,7 @@ Is given number prime or not.
 
 
 from brain_games.cli import greet, welcome_user
-from brain_games.games.game import game
+from brain_games.game import game
 
 
 def main():

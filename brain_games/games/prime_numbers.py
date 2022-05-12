@@ -1,8 +1,7 @@
 """The prime_numbers_game. Is generated number prime or not."""
 
-import prompt
-from brain_games.cli import ANSWER_PROMPT, QUESTION_STRING
-from brain_games.game import check_user_answer, get_number
+from math import sqrt
+from random import randint
 
 DESCRIPTION = 'Answer "yes" if given number is prime. Otherwise answer "no".'
 
@@ -13,35 +12,21 @@ MAX_NUMBER = 500
 def _is_prime(number):
     if number % 2 == 0:
         return number == 2
-    d = 3
-    while d * d <= number and number % d != 0:
-        d += 2
-    return d * d > number
+    for i in range(3, int(sqrt(number)) + 1):
+        if number % i == 0:
+            return False
+
+    return True
 
 
-def _get_correct_answer(number):
-    if _is_prime(number):
-        correct_answer = 'yes'
-    else:
-        correct_answer = 'no'
-
-    return (correct_answer)
-
-
-def game_round():
-    """One round of brain-prime game.
+def get_game_round():
+    """Get data for the one round of the brain-prime game.
 
     Returns:
-        res: result of the round (boolean),
-        user_unswer,
+        number: generated number,
         correct_answer
     """
-    case = get_number(MIN_NUMBER, MAX_NUMBER)
+    number = randint(MIN_NUMBER, MAX_NUMBER)
+    correct_answer = 'yes' if _is_prime(number) else 'no'
 
-    print(QUESTION_STRING + str(case))
-    user_answer = prompt.string(ANSWER_PROMPT)
-
-    correct_answer = _get_correct_answer(case)
-    res = check_user_answer(user_answer, correct_answer)
-
-    return (res, user_answer, correct_answer)
+    return (number, correct_answer)

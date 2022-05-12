@@ -1,8 +1,6 @@
 """The even numbers game. Is generated number even or not."""
 
-import prompt
-from brain_games.cli import ANSWER_PROMPT, QUESTION_STRING
-from brain_games.game import check_user_answer, get_number
+from random import randint
 
 DESCRIPTION = 'Answer "yes" if the number is even, otherwise answer "no".'
 
@@ -10,33 +8,14 @@ MIN_NUMBER = -1000000000
 MAX_NUMBER = 1000000000
 
 
-def _is_even(number):
-    return number % 2 == 0
-
-
-def _get_correct_answer(number):
-    if _is_even(number):
-        correct_answer = 'yes'
-    else:
-        correct_answer = 'no'
-
-    return (correct_answer)
-
-
-def game_round():
-    """One round of brain-even game.
+def get_game_round():
+    """Get data for the one round of the brain-even game.
 
     Returns:
-        res = result of the round (boolean),
-        user_unswer,
+        case: generated number,
         correct_answer
     """
-    case = get_number(MIN_NUMBER, MAX_NUMBER)
+    number = randint(MIN_NUMBER, MAX_NUMBER)
+    correct_answer = 'yes' if number % 2 == 0 else 'no'
 
-    print(QUESTION_STRING + str(case))
-    user_answer = prompt.string(ANSWER_PROMPT)
-
-    correct_answer = _get_correct_answer(case)
-    res = check_user_answer(user_answer, correct_answer)
-
-    return (res, user_answer, correct_answer)
+    return (number, correct_answer)

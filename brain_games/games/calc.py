@@ -1,49 +1,36 @@
 """The calculation game. Find the result of the generated expression."""
 
-from random import randint
-
-import prompt
-from brain_games.cli import ANSWER_PROMPT, QUESTION_STRING
-from brain_games.game import check_user_answer, get_number
+from random import choice, randint
 
 DESCRIPTION = 'What is the result of the expression?'
 
 MIN_NUMBER = -10
 MAX_NUMBER = 10
 
-
-def _get_operator():
-    operators = ('+', '-', '*')
-    ind = randint(0, 2)
-    return operators[ind]
+OPERATORS = ('+', '-', '*')
 
 
-def _get_case():
-    a = get_number(MIN_NUMBER, MAX_NUMBER)
-    b = get_number(MIN_NUMBER, MAX_NUMBER)
-    operator = _get_operator()
-
-    return '{a} {operator} {b}'.format(a=a, operator=operator, b=b)
-
-
-def _get_correct_answer(case):
-    return str(eval(case))  # noqa: S307 Use of possibly insecure function
+def _get_correct_answer(num_a, num_b, operator):
+    if operator == '+':
+        return num_a + num_b
+    if operator == '-':
+        return num_a - num_b
+    if operator == '*':
+        return num_a * num_b
 
 
-def game_round():
-    """One round of brain-calc game.
+def get_game_round():
+    """Get data for the one round of the brain-calc game.
 
     Returns:
-        res = result of the round (True or False),
-        user_unswer,
+        case: generated expression,
         correct_answer
     """
-    case = _get_case()
+    num_a = randint(MIN_NUMBER, MAX_NUMBER)
+    num_b = randint(MIN_NUMBER, MAX_NUMBER)
+    operator = choice(OPERATORS)
 
-    print(QUESTION_STRING + case)
-    correct_answer = _get_correct_answer(case)
-    user_answer = prompt.string(ANSWER_PROMPT)
+    case = '{a} {operator} {b}'.format(a=num_a, operator=operator, b=num_b)
+    correct_answer = str(_get_correct_answer(num_a, num_b, operator))
 
-    res = check_user_answer(user_answer, correct_answer)
-
-    return (res, user_answer, correct_answer)
+    return (case, correct_answer)

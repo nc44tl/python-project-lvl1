@@ -3,12 +3,12 @@
 """The entry point for program."""
 
 
-from brain_games.cli import greet, welcome_user
+from brain_games.cli import welcome_user
 
 
 def main():
     """Run a program."""
-    greet()
+    print('Welcome to the Brain Games!')
     welcome_user()
 
 

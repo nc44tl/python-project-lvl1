@@ -2,10 +2,6 @@
 
 from random import randint
 
-import prompt
-from brain_games.cli import ANSWER_PROMPT, QUESTION_STRING
-from brain_games.game import check_user_answer
-
 DESCRIPTION = 'What number is missing in the progression?'
 
 PROGRESSION_LENGTH = 10
@@ -14,7 +10,13 @@ MAX_START = 1000
 MAX_STEP = 50
 
 
-def _get_progression():
+def get_game_round():
+    """Get data for the one round of the brain-progression game.
+
+    Returns:
+        case: generated progression,
+        hidden_number: correct_answer
+    """
     case = ''
     number = randint(MIN_START, MAX_START)
     step = randint(1, MAX_STEP)
@@ -33,21 +35,3 @@ def _get_progression():
         i += 1
 
     return (case.strip(), hidden_number)
-
-
-def game_round():
-    """One round of the brain-progression game.
-
-    Returns:
-        res: result of the round (boolean),
-        correct_answer
-        user_unswer,
-    """
-    (case, correct_answer) = _get_progression()
-
-    print(QUESTION_STRING + case)
-    user_answer = prompt.string(ANSWER_PROMPT)
-
-    res = check_user_answer(user_answer, correct_answer)
-
-    return (res, user_answer, correct_answer)

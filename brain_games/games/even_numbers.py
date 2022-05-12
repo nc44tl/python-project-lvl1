@@ -2,10 +2,6 @@
 
 from random import randint
 
-import prompt
-from brain_games.cli import ANSWER_PROMPT, QUESTION_STRING
-from brain_games.game import check_user_answer
-
 DESCRIPTION = 'Answer "yes" if the number is even, otherwise answer "no".'
 
 MIN_NUMBER = -1000000000
@@ -25,20 +21,14 @@ def _get_correct_answer(number):
     return (correct_answer)
 
 
-def game_round():
-    """One round of brain-even game.
+def get_game_round():
+    """Get data for the one round of the brain-even game.
 
     Returns:
-        res = result of the round (boolean),
-        user_unswer,
+        case: generated number,
         correct_answer
     """
     case = randint(MIN_NUMBER, MAX_NUMBER)
-
-    print(QUESTION_STRING + str(case))
-    user_answer = prompt.string(ANSWER_PROMPT)
-
     correct_answer = _get_correct_answer(case)
-    res = check_user_answer(user_answer, correct_answer)
 
-    return (res, user_answer, correct_answer)
+    return (case, correct_answer)

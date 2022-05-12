@@ -2,10 +2,6 @@
 
 from random import randint
 
-import prompt
-from brain_games.cli import ANSWER_PROMPT, QUESTION_STRING
-from brain_games.game import check_user_answer
-
 DESCRIPTION = 'What is the result of the expression?'
 
 MIN_NUMBER = -10
@@ -30,20 +26,14 @@ def _get_correct_answer(case):
     return str(eval(case))  # noqa: S307 Use of possibly insecure function
 
 
-def game_round():
-    """One round of brain-calc game.
+def get_game_round():
+    """Get data for the one round of the brain-calc game.
 
     Returns:
-        res = result of the round (True or False),
-        user_unswer,
+        case: generated expression,
         correct_answer
     """
     case = _get_case()
-
-    print(QUESTION_STRING + case)
     correct_answer = _get_correct_answer(case)
-    user_answer = prompt.string(ANSWER_PROMPT)
 
-    res = check_user_answer(user_answer, correct_answer)
-
-    return (res, user_answer, correct_answer)
+    return (case, correct_answer)

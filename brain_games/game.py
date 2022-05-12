@@ -38,15 +38,9 @@ def run_game(game):
     while counter < ROUNDS_PER_GAME:
         (res, user_answer, correct_answer) = game.game_round()
         if not res:
-            print("'{user_answer}' is wrong answer ;(. \
+            print(f"'{user_answer}' is wrong answer ;(. \
 Correct answer was '{correct_answer}'.\n\
-Let's try again, {user}!".
-                format(  # noqa: E128 (intendation)
-                    user_answer=user_answer,
-                    correct_answer=correct_answer,
-                    user=username,
-                ),
-            )
+Let's try again, {username}!")
             return
         counter += 1
 

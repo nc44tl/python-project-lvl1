@@ -1,23 +1,19 @@
 """The calculation game. Find the result of the generated expression."""
 
-from random import randint
+from random import choice, randint
 
 DESCRIPTION = 'What is the result of the expression?'
 
 MIN_NUMBER = -10
 MAX_NUMBER = 10
 
-
-def _get_operator():
-    operators = ('+', '-', '*')
-    ind = randint(0, 2)
-    return operators[ind]
+OPERATORS = ('+', '-', '*')
 
 
 def _get_case():
     a = randint(MIN_NUMBER, MAX_NUMBER)
     b = randint(MIN_NUMBER, MAX_NUMBER)
-    operator = _get_operator()
+    operator = choice(OPERATORS)
 
     return '{a} {operator} {b}'.format(a=a, operator=operator, b=b)
 

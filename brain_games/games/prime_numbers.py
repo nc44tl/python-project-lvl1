@@ -1,8 +1,10 @@
 """The prime_numbers_game. Is generated number prime or not."""
 
+from random import randint
+
 import prompt
 from brain_games.cli import ANSWER_PROMPT, QUESTION_STRING
-from brain_games.game import check_user_answer, get_number
+from brain_games.game import check_user_answer
 
 DESCRIPTION = 'Answer "yes" if given number is prime. Otherwise answer "no".'
 
@@ -36,7 +38,7 @@ def game_round():
         user_unswer,
         correct_answer
     """
-    case = get_number(MIN_NUMBER, MAX_NUMBER)
+    case = randint(MIN_NUMBER, MAX_NUMBER)
 
     print(QUESTION_STRING + str(case))
     user_answer = prompt.string(ANSWER_PROMPT)

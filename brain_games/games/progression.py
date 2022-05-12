@@ -1,8 +1,10 @@
 """The progression game. Find missing number in the progression."""
 
+from random import randint
+
 import prompt
 from brain_games.cli import ANSWER_PROMPT, QUESTION_STRING
-from brain_games.game import check_user_answer, get_number
+from brain_games.game import check_user_answer
 
 DESCRIPTION = 'What number is missing in the progression?'
 
@@ -14,9 +16,9 @@ MAX_STEP = 50
 
 def _get_progression():
     case = ''
-    number = get_number(MIN_START, MAX_START)
-    step = get_number(1, MAX_STEP)
-    index_to_hide = get_number(0, PROGRESSION_LENGTH - 1)
+    number = randint(MIN_START, MAX_START)
+    step = randint(1, MAX_STEP)
+    index_to_hide = randint(0, PROGRESSION_LENGTH - 1)
     hidden_number = ''
 
     i = 0

@@ -1,24 +1,9 @@
 """General game algorythm."""
 
 
-from random import randint
-
 import prompt
 
 ROUNDS_PER_GAME = 3
-
-
-def get_number(min_number, max_number):
-    """Generate random number in range.
-
-    Parameters:
-        min_number: range minimum
-        max_number: range maximum
-
-    Returns:
-        random number from defined range
-    """
-    return randint(min_number, max_number)
 
 
 def check_user_answer(user_answer, correct_answer):

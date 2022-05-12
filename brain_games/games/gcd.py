@@ -4,10 +4,11 @@ Find the greatest common divisor of given numbers.
 """
 
 import math
+from random import randint
 
 import prompt
 from brain_games.cli import ANSWER_PROMPT, QUESTION_STRING
-from brain_games.game import check_user_answer, get_number
+from brain_games.game import check_user_answer
 
 DESCRIPTION = 'Find the greatest common divisor of given numbers.'
 
@@ -16,8 +17,8 @@ _MAX_NUMBER = 50
 
 
 def _get_case():
-    num_a = get_number(_MIN_NUMBER, _MAX_NUMBER)
-    num_b = get_number(_MIN_NUMBER, _MAX_NUMBER)
+    num_a = randint(_MIN_NUMBER, _MAX_NUMBER)
+    num_b = randint(_MIN_NUMBER, _MAX_NUMBER)
     case = '{num_a} {num_b}'.format(num_a=num_a, num_b=num_b)
 
     return (case, num_a, num_b)

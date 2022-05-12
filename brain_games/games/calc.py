@@ -4,7 +4,7 @@ from random import randint
 
 import prompt
 from brain_games.cli import ANSWER_PROMPT, QUESTION_STRING
-from brain_games.game import check_user_answer, get_number
+from brain_games.game import check_user_answer
 
 DESCRIPTION = 'What is the result of the expression?'
 
@@ -19,8 +19,8 @@ def _get_operator():
 
 
 def _get_case():
-    a = get_number(MIN_NUMBER, MAX_NUMBER)
-    b = get_number(MIN_NUMBER, MAX_NUMBER)
+    a = randint(MIN_NUMBER, MAX_NUMBER)
+    b = randint(MIN_NUMBER, MAX_NUMBER)
     operator = _get_operator()
 
     return '{a} {operator} {b}'.format(a=a, operator=operator, b=b)

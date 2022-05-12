@@ -3,11 +3,11 @@
 
 from random import randint
 
+import prompt
 from brain_games.cli import (
     greet,
     print_loose_phrase,
     print_win_phrase,
-    welcome_user,
 )
 
 ROUNDS_PER_GAME = 3
@@ -46,7 +46,10 @@ def run_game(game):
         game: module with game
     """
     greet()
-    username = welcome_user()
+    #TODO после проверки, возможно, убрать ниже дублирование с welcome_user()
+    # (dev: 4052e4c). Либо убрать скрипт brain_games и что с ним связано.
+    username = prompt.string('May I have your name? ')
+    print('Hello, {0}!'.format(username))
 
     print(game.DESCRIPTION)
 

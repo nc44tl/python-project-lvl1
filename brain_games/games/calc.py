@@ -10,16 +10,13 @@ MAX_NUMBER = 10
 OPERATORS = ('+', '-', '*')
 
 
-def _get_case():
-    a = randint(MIN_NUMBER, MAX_NUMBER)
-    b = randint(MIN_NUMBER, MAX_NUMBER)
-    operator = choice(OPERATORS)
-
-    return '{a} {operator} {b}'.format(a=a, operator=operator, b=b)
-
-
-def _get_correct_answer(case):
-    return str(eval(case))  # noqa: S307 Use of possibly insecure function
+def _get_correct_answer(num_a, num_b, operator):
+    if operator == '+':
+        return num_a + num_b
+    if operator == '-':
+        return num_a - num_b
+    if operator == '*':
+        return num_a * num_b
 
 
 def get_game_round():
@@ -29,7 +26,11 @@ def get_game_round():
         case: generated expression,
         correct_answer
     """
-    case = _get_case()
-    correct_answer = _get_correct_answer(case)
+    num_a = randint(MIN_NUMBER, MAX_NUMBER)
+    num_b = randint(MIN_NUMBER, MAX_NUMBER)
+    operator = choice(OPERATORS)
+
+    case = '{a} {operator} {b}'.format(a=num_a, operator=operator, b=num_b)
+    correct_answer = str(_get_correct_answer(num_a, num_b, operator))
 
     return (case, correct_answer)

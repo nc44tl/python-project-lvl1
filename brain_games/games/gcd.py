@@ -15,7 +15,7 @@ MAX_NUMBER = 50
 def _get_case():
     num_a = randint(MIN_NUMBER, MAX_NUMBER)
     num_b = randint(MIN_NUMBER, MAX_NUMBER)
-    case = '{num_a} {num_b}'.format(num_a=num_a, num_b=num_b)
+    case = f'{num_a} {num_b}'
 
     return (case, num_a, num_b)
 

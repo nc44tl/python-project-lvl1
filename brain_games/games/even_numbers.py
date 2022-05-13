@@ -8,7 +8,7 @@ MIN_NUMBER = -1000000000
 MAX_NUMBER = 1000000000
 
 
-def get_game_round():
+def run_round():
     """Get data for the one round of the brain-even game.
 
     Returns:

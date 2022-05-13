@@ -10,7 +10,7 @@ MAX_START = 1000
 MAX_STEP = 50
 
 
-def get_game_round():
+def run_round():
     """Get data for the one round of the brain-progression game.
 
     Returns:

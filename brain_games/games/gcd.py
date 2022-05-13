@@ -24,7 +24,7 @@ def _get_correct_answer(num_a, num_b):
     return str(math.gcd(num_a, num_b))
 
 
-def get_game_round():
+def run_round():
     """Get data for the one round of the brain-gcd game.
 
     Returns:

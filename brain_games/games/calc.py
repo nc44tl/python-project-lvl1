@@ -19,7 +19,7 @@ def _calculate_answer(num_a, num_b, operator):
         return num_a * num_b
 
 
-def get_game_round():
+def run_round():
     """Get data for the one round of the brain-calc game.
 
     Returns:

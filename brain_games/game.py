@@ -19,8 +19,8 @@ def run_game(game):
     print(f'Hello, {username}!')
     print(game.DESCRIPTION)
 
-    for i in range(ROUNDS_PER_GAME):
-        (case, correct_answer) = game.get_game_round()
+    for _ in range(ROUNDS_PER_GAME):
+        (case, correct_answer) = game.run_round()
         print(f'Question: {case}')
         user_answer = prompt.string('Your answer: ')
         res = user_answer == correct_answer
@@ -30,6 +30,6 @@ def run_game(game):
 Correct answer was '{correct_answer}'.\n\
 Let's try again, {username}!")
             break
-    
+
     else:
         print(f'Congratulations, {username}!')

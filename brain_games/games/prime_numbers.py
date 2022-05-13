@@ -19,7 +19,7 @@ def _is_prime(number):
     return True
 
 
-def get_game_round():
+def run_round():
     """Get data for the one round of the brain-prime game.
 
     Returns:

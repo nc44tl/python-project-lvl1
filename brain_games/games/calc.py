@@ -10,7 +10,7 @@ MAX_NUMBER = 10
 OPERATORS = ('+', '-', '*')
 
 
-def _get_correct_answer(num_a, num_b, operator):
+def _calculate_answer(num_a, num_b, operator):
     if operator == '+':
         return num_a + num_b
     if operator == '-':
@@ -30,7 +30,7 @@ def get_game_round():
     num_b = randint(MIN_NUMBER, MAX_NUMBER)
     operator = choice(OPERATORS)
 
-    case = f'{num_a} {operator} {num_b}'
-    correct_answer = str(_get_correct_answer(num_a, num_b, operator))
+    expression = f'{num_a} {operator} {num_b}'
+    correct_answer = str(_calculate_answer(num_a, num_b, operator))
 
-    return (case, correct_answer)
+    return (expression, correct_answer)

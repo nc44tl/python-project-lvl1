@@ -10,9 +10,9 @@ MAX_NUMBER = 500
 
 
 def _is_prime(number):
-    if number % 2 == 0:
-        return number == 2
-    for i in range(3, int(sqrt(number)) + 1):
+    if number < 2:
+        return False
+    for i in range(2, int(sqrt(number)) + 1):
         if number % i == 0:
             return False
 

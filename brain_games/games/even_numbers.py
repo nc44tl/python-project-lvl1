@@ -12,7 +12,7 @@ def run_round():
     """Get data for the one round of the brain-even game.
 
     Returns:
-        case: generated number,
+        number: generated number,
         correct_answer
     """
     number = randint(MIN_NUMBER, MAX_NUMBER)

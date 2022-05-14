@@ -8,12 +8,12 @@ Is given number prime or not.
 
 
 from brain_games.game import run_game
-from brain_games.games import prime_numbers
+from brain_games.games import prime
 
 
 def main():
     """Run a game."""
-    run_game(prime_numbers)
+    run_game(prime)
 
 
 if __name__ == '__main__':

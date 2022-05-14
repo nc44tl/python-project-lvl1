@@ -14,24 +14,21 @@ def run_round():
     """Get data for the one round of the brain-progression game.
 
     Returns:
-        case: generated progression,
-        hidden_number: correct_answer
+        case: generated progression with one random item hidden,
+        hidden_number: correct answer
     """
-    case = ''
+    progression = []
     number = randint(MIN_START, MAX_START)
     step = randint(1, MAX_STEP)
-    index_to_hide = randint(0, PROGRESSION_LENGTH - 1)
-    hidden_number = ''
 
-    i = 0
-    while i < PROGRESSION_LENGTH:
-        if i == index_to_hide:
-            hidden_number += str(number)
-            case = '{case} {add}'.format(case=case, add='..')
-        else:
-            case = '{case} {add}'.format(case=case, add=str(number))
-
+    for _ in range(PROGRESSION_LENGTH):
+        progression.append(str(number))
         number += step
-        i += 1
 
-    return (case.strip(), hidden_number)
+    index_to_hide = randint(0, PROGRESSION_LENGTH - 1)
+    hidden_number = progression[index_to_hide]
+    progression[index_to_hide] = '..'
+
+    case = ' '.join(progression)
+
+    return (case, hidden_number)

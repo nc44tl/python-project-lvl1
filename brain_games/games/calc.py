@@ -10,7 +10,7 @@ MAX_NUMBER = 10
 OPERATORS = ('+', '-', '*')
 
 
-def _get_correct_answer(num_a, num_b, operator):
+def _calculate(num_a, num_b, operator):
     if operator == '+':
         return num_a + num_b
     if operator == '-':
@@ -19,18 +19,18 @@ def _get_correct_answer(num_a, num_b, operator):
         return num_a * num_b
 
 
-def get_game_round():
+def run_round():
     """Get data for the one round of the brain-calc game.
 
     Returns:
-        case: generated expression,
+        expression: generated expression,
         correct_answer
     """
     num_a = randint(MIN_NUMBER, MAX_NUMBER)
     num_b = randint(MIN_NUMBER, MAX_NUMBER)
     operator = choice(OPERATORS)
 
-    case = '{a} {operator} {b}'.format(a=num_a, operator=operator, b=num_b)
-    correct_answer = str(_get_correct_answer(num_a, num_b, operator))
+    expression = f'{num_a} {operator} {num_b}'
+    correct_answer = str(_calculate(num_a, num_b, operator))
 
-    return (case, correct_answer)
+    return (expression, correct_answer)

@@ -7,12 +7,12 @@ Is random number even or not.
 
 
 from brain_games.game import run_game
-from brain_games.games import even_numbers
+from brain_games.games import even
 
 
 def main():
     """Run a game."""
-    run_game(even_numbers)
+    run_game(even)
 
 
 if __name__ == '__main__':

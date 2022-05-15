@@ -13,7 +13,7 @@ def run_game(game):
         game: module with game
     """
     print('Welcome to the Brain Games!')
-    # TODO после проверки, возможно, убрать ниже дублирование с welcome_user()
+    # TODO  после проверки, возможно, убрать ниже дублирование с welcome_user()
     # (dev: 4052e4c). Либо убрать скрипт brain_games и что с ним связано.
     username = prompt.string('May I have your name? ')
     print(f'Hello, {username}!')

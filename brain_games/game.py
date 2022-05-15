@@ -23,13 +23,14 @@ def run_game(game):
         (case, correct_answer) = game.run_round()
         print(f'Question: {case}')
         user_answer = prompt.string('Your answer: ')
-        res = user_answer == correct_answer
 
-        if not res:
+        if user_answer != correct_answer:
             print(f"'{user_answer}' is wrong answer ;(. \
 Correct answer was '{correct_answer}'.\n\
 Let's try again, {username}!")
             break
+
+        print('Correct!')
 
     else:
         print(f'Congratulations, {username}!')

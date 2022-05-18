@@ -1,6 +1,5 @@
 # Brain Games
 
-[![Actions Status](https://github.com/ncaatl/python-project-lvl1/workflows/hexlet-check/badge.svg)](https://github.com/ncaatl/python-project-lvl1/actions)
 [![WPS-linter-check](https://github.com/ncaatl/python-project-lvl1/actions/workflows/linter-check.yml/badge.svg)](https://github.com/ncaatl/python-project-lvl1/actions/workflows/linter-check.yml)
 [![Maintainability](https://api.codeclimate.com/v1/badges/ade4ed5250e7d7433d8b/maintainability)](https://codeclimate.com/github/ncaatl/python-project-lvl1/maintainability)
 
